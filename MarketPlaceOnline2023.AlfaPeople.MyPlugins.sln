@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketplaceOnline2023.AlfaPeople.MyPlugins", "MarketPlaceOnline2023.AlfaPeople.MyPlugins\MarketplaceOnline2023.AlfaPeople.MyPlugins.csproj", "{96F9822A-DE24-4D03-A4B9-86DC203119AA}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MarketplaceOnline2023.AlfaPeople.SharedProject", "MarketplaceOnline2023.AlfaPeople.SharedProject\MarketplaceOnline2023.AlfaPeople.SharedProject.shproj", "{1331B570-E13B-4870-9C16-D5CA43851C95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96F9822A-DE24-4D03-A4B9-86DC203119AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96F9822A-DE24-4D03-A4B9-86DC203119AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96F9822A-DE24-4D03-A4B9-86DC203119AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96F9822A-DE24-4D03-A4B9-86DC203119AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD19626D-AB91-4308-813C-23F60C3DA048}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MarketplaceOnline2023.AlfaPeople.SharedProject\MarketplaceOnline2023.AlfaPeople.SharedProject.projitems*{1331b570-e13b-4870-9c16-d5ca43851c95}*SharedItemsImports = 13
+	EndGlobalSection
+EndGlobal
