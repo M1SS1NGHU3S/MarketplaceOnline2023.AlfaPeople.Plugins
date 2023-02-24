@@ -5,7 +5,12 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketplaceOnline2023.AlfaPeople.MyPlugins", "MarketPlaceOnline2023.AlfaPeople.MyPlugins\MarketplaceOnline2023.AlfaPeople.MyPlugins.csproj", "{96F9822A-DE24-4D03-A4B9-86DC203119AA}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MarketplaceOnline2023.AlfaPeople.SharedProject", "MarketplaceOnline2023.AlfaPeople.SharedProject\MarketplaceOnline2023.AlfaPeople.SharedProject.shproj", "{1331B570-E13B-4870-9C16-D5CA43851C95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketplaceOnline2023.AlfaPeople.MVC", "MarketplaceOnline2023.AlfaPeople.MVC\MarketplaceOnline2023.AlfaPeople.MVC.csproj", "{EF850A44-BC19-447C-A953-34CDBD8D7224}"
+	ProjectSection(ProjectDependencies) = postProject
+		{96F9822A-DE24-4D03-A4B9-86DC203119AA} = {96F9822A-DE24-4D03-A4B9-86DC203119AA}
+	EndProjectSection
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MarketplaceOnline2023.AlfaPeople.SharedProject", "MarketplaceOnline2023.AlfaPeople.SharedProject\MarketplaceOnline2023.AlfaPeople.SharedProject.shproj", "{D47D48B0-2BA3-4168-B605-9E18E41DEE33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +22,10 @@ Global
 		{96F9822A-DE24-4D03-A4B9-86DC203119AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96F9822A-DE24-4D03-A4B9-86DC203119AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96F9822A-DE24-4D03-A4B9-86DC203119AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF850A44-BC19-447C-A953-34CDBD8D7224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF850A44-BC19-447C-A953-34CDBD8D7224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF850A44-BC19-447C-A953-34CDBD8D7224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF850A44-BC19-447C-A953-34CDBD8D7224}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -25,6 +34,7 @@ Global
 		SolutionGuid = {DD19626D-AB91-4308-813C-23F60C3DA048}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		MarketplaceOnline2023.AlfaPeople.SharedProject\MarketplaceOnline2023.AlfaPeople.SharedProject.projitems*{1331b570-e13b-4870-9c16-d5ca43851c95}*SharedItemsImports = 13
+		MarketplaceOnline2023.AlfaPeople.SharedProject\MarketplaceOnline2023.AlfaPeople.SharedProject.projitems*{96f9822a-de24-4d03-a4b9-86dc203119aa}*SharedItemsImports = 4
+		MarketplaceOnline2023.AlfaPeople.SharedProject\MarketplaceOnline2023.AlfaPeople.SharedProject.projitems*{d47d48b0-2ba3-4168-b605-9e18e41dee33}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

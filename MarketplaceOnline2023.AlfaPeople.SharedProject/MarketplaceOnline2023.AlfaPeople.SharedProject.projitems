@@ -3,13 +3,13 @@
   <PropertyGroup>
     <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>1331b570-e13b-4870-9c16-d5ca43851c95</SharedGUID>
+    <SharedGUID>d47d48b0-2ba3-4168-b605-9e18e41dee33</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>MarketplaceOnline2023.AlfaPeople.SharedProject</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Controllers\" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\AccountController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Account.cs" />
   </ItemGroup>
 </Project>
