@@ -14,24 +14,47 @@ namespace MarketplaceOnline2023.AlfaPeople.MyPlugins
         public ITracingService TracingService { get; set; }
 
         public void Execute(IServiceProvider serviceProvider)
-        {
-            IPluginExecutionContext context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
-            IOrganizationServiceFactory serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
-            TracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
-            Service = serviceFactory.CreateOrganizationService(context.UserId);
+		{
+			IPluginExecutionContext context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
+			IOrganizationServiceFactory serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
+			TracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
+			Service = serviceFactory.CreateOrganizationService(context.UserId);
 
-            TracingService.Trace("Serviços funcionando");
+			TracingService.Trace("Serviços funcionando");
 
-            Entity oppPreImage = (Entity)context.PreEntityImages["PreImageDelete"];
-            TracingService.Trace("PreImage salva");
+			ExecuteAccountOpportunitiesUpdate(context);
+			TracingService.Trace("Update concluído");
 
-            EntityReference preAccountReference = (EntityReference)oppPreImage["parentaccountid"];
-            TracingService.Trace("preAccountReference salva");
+		}
 
-            UpdateAccountTotalOpportunities(preAccountReference, false);
-        }
+		private void ExecuteAccountOpportunitiesUpdate(IPluginExecutionContext context)
+		{
+			Entity oppPreImage = (Entity)context.PreEntityImages["PreImage"];
+			TracingService.Trace("PreImage salva");
 
-        public void UpdateAccountTotalOpportunities(EntityReference account, bool incrementOrDecrement)
+			EntityReference preAccountReference = oppPreImage.Contains("parentaccountid") ? (EntityReference)oppPreImage["parentaccountid"] : null;
+
+			if (preAccountReference != null)
+			{
+				TracingService.Trace("preAccountReference salva");
+
+				UpdateAccountTotalOpportunities(preAccountReference, false);
+				TracingService.Trace("Pre account total opportunities update conclúido");
+
+				if (context.MessageName == "Update")
+				{
+					Entity oppPostImage = (Entity)context.PostEntityImages["PostImage"];
+					TracingService.Trace("PostImage Update salva");
+
+					EntityReference postAccountReference = (EntityReference)oppPostImage["parentaccountid"];
+					TracingService.Trace("postAccountReference salva");
+
+					UpdateAccountTotalOpportunities(postAccountReference, true);
+				}
+			}
+		}
+
+		public void UpdateAccountTotalOpportunities(EntityReference account, bool incrementOrDecrement)
         {
 			AccountController accountController = new AccountController(Service);
 
